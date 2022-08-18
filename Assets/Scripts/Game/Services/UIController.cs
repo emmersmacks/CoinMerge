@@ -1,4 +1,5 @@
-﻿using CodeBase.Infrastructure.Services;
+﻿using System.Collections.Generic;
+using CodeBase.Infrastructure.Services;
 using Infrastructure.AssetManagment;
 using Infrastructure.Services;
 using UnityEngine;
@@ -18,6 +19,10 @@ public class UIController : IService
         scoreController.OnScoreChange += UpdateScoreField;
         _uiView.ResumeButton.onClick.AddListener(ResumeGame);
         _uiView.StopButton.onClick.AddListener(StopGame);
+        _uiView.ShowRecordsPanel.onClick.AddListener(ShowRecordsPanel);
+        _uiView.HideRecordsPanel.onClick.AddListener(HideRecordsPanel);
+        AllServices.Container.Single<DataController>().GetUsersScoreList(OnScoreLoaded);
+
     }
 
     private void UpdateScoreField(int number)
@@ -38,6 +43,23 @@ public class UIController : IService
 
         Time.timeScale = 1;
         _uiView.PausePanel.SetActive(false);
+    }
 
+    public void ShowRecordsPanel()
+    {
+        AllServices.Container.Single<CoinSpawner>().Platform.SetActive(false);
+        _uiView.RecordsPanel.SetActive(true);
+    }
+
+    private void OnScoreLoaded(List<UserData> userData)
+    {
+        AllServices.Container.Single<DataController>().FillScorePanel(_uiView.UsersPanel, userData, "UserPanelGame");
+    }
+
+    public void HideRecordsPanel()
+    {
+        AllServices.Container.Single<CoinSpawner>().Platform.SetActive(true);
+        _uiView.RecordsPanel.SetActive(false);
+        
     }
 }

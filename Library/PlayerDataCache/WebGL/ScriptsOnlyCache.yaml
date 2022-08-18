@@ -18,7 +18,6 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -49,6 +48,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.Text
   sceneClasses:
@@ -72,11 +72,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2916}
     - Class: 114
-      Script: {instanceID: 3378}
+      Script: {instanceID: 3406}
     - Class: 114
-      Script: {instanceID: 3744}
+      Script: {instanceID: 3772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -115,59 +115,61 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1458}
+      Script: {instanceID: 1484}
     - Class: 114
-      Script: {instanceID: 1460}
+      Script: {instanceID: 1486}
     - Class: 114
-      Script: {instanceID: 1526}
+      Script: {instanceID: 1552}
     - Class: 114
-      Script: {instanceID: 1850}
+      Script: {instanceID: 1878}
     - Class: 114
-      Script: {instanceID: 1856}
+      Script: {instanceID: 1884}
     - Class: 114
-      Script: {instanceID: 2068}
+      Script: {instanceID: 2096}
     - Class: 114
-      Script: {instanceID: 2270}
+      Script: {instanceID: 2298}
     - Class: 114
-      Script: {instanceID: 2454}
+      Script: {instanceID: 2482}
     - Class: 114
-      Script: {instanceID: 2716}
+      Script: {instanceID: 2744}
     - Class: 114
-      Script: {instanceID: 2888}
-    - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2916}
     - Class: 114
       Script: {instanceID: 2966}
     - Class: 114
-      Script: {instanceID: 3128}
+      Script: {instanceID: 2994}
     - Class: 114
-      Script: {instanceID: 3378}
+      Script: {instanceID: 3156}
     - Class: 114
-      Script: {instanceID: 3498}
+      Script: {instanceID: 3406}
     - Class: 114
-      Script: {instanceID: 3744}
+      Script: {instanceID: 3526}
     - Class: 114
-      Script: {instanceID: 3750}
+      Script: {instanceID: 3772}
     - Class: 114
-      Script: {instanceID: 3978}
+      Script: {instanceID: 3778}
     - Class: 114
-      Script: {instanceID: 4464}
+      Script: {instanceID: 3848}
     - Class: 114
-      Script: {instanceID: 4510}
+      Script: {instanceID: 4008}
     - Class: 114
-      Script: {instanceID: 4784}
+      Script: {instanceID: 4494}
     - Class: 114
-      Script: {instanceID: 4944}
+      Script: {instanceID: 4540}
     - Class: 114
-      Script: {instanceID: 5092}
+      Script: {instanceID: 4814}
     - Class: 114
-      Script: {instanceID: 5192}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 5214}
+      Script: {instanceID: 5122}
     - Class: 114
-      Script: {instanceID: 5354}
+      Script: {instanceID: 5222}
     - Class: 114
-      Script: {instanceID: 5840}
+      Script: {instanceID: 5244}
+    - Class: 114
+      Script: {instanceID: 5384}
+    - Class: 114
+      Script: {instanceID: 5870}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -289,7 +291,7 @@ ScriptsOnlyBuild:
     className: Runpoint
   - hash:
       serializedVersion: 2
-      Hash: 7f9a0f06caa2b4f74b823fbbe9a2e246
+      Hash: 1f9ee4611140bc98d450e01ecb8762f2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIView
@@ -625,7 +627,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 0ebdcd88cfff282ca1d23a5813d18112
+      Hash: 5767b5095a28c06cafcc831ac12cf8a2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UserPanelView

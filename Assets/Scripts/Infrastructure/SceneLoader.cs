@@ -13,7 +13,7 @@ public class SceneLoader
         _coroutineRunner = coroutineRunner;
     }
     
-    public void Load(string name, Action onLoad)
+    public async void Load(string name, Action onLoad)
     {
         _coroutineRunner.StartCoroutine(LoadScene(name, onLoad));
     }

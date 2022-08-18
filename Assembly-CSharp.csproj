@@ -53,6 +53,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Infrastructure\StateMachine\GameloopState.cs" />
+     <Compile Include="Assets\Scripts\Data\UserData.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\StateMachine\MenuState.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\Runpoint.cs" />
      <Compile Include="Assets\Scripts\Game\Services\MenuController.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\Game\Services\EndGameController.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\ICoroutineRunner.cs" />
      <Compile Include="Assets\Scripts\Data\ServiceLocator\AllServices.cs" />
+     <Compile Include="Assets\Scripts\Game\Services\NetworkController.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\StateMachine\BootstrapState.cs" />
      <Compile Include="Assets\Scripts\Data\AssetManagment\AssetPath.cs" />
      <Compile Include="Assets\Scripts\Data\ServiceLocator\IService.cs" />
@@ -83,8 +85,6 @@
      <Compile Include="Assets\Scripts\Data\AssetManagment\AssetProvider.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\StateMachine\IStateMachine.cs" />
      <Compile Include="Assets\Scripts\Infrastructure\StateMachine\IState.cs" />
-     <Compile Include="Assets\Scripts\Data\UserData.cs" />
-     <Compile Include="Assets\Scripts\Game\Services\NetworkController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

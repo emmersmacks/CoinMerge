@@ -33,14 +33,15 @@ namespace CoinMerge.States
         {
             if (SceneManager.GetActiveScene().name == "Menu")
             {
-                
                 _stateMachine.Enter<MenuState>();
-
             }
             else if (SceneManager.GetActiveScene().name == "GameScene")
             {
                 _stateMachine.Enter<GameloopState>();
-
+            }
+            else
+            {
+                _stateMachine.Enter<MenuState>();
             }
         }
 

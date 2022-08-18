@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
 using CoinMerge.States;
 using Infrastructure.AssetManagment;
@@ -14,26 +15,24 @@ public class MenuController : IService
     {
         _stateMachine = stateMachine;
         _sceneLoader = sceneLoader;
+        
+    }
+
+    public void LoadMenu()
+    {
         var uiView = AssetProvider.Instantiate(AssetPath.MenuHUD).GetComponent<MenuUIView>();
         uiView.PlayButton.onClick.AddListener(LoadNextScene);
         uiView.ShareButton.onClick.AddListener(ShareGameForFriends);
         _scorePanel = uiView.UsersPanel;
+        var data = AllServices.Container.Single<DataController>();
+        data.GetUsersScoreList(OnScoreLoaded);
+        
     }
 
-    public void FillScorePanel(List<UserData> userDatas)
+    private void OnScoreLoaded(List<UserData> data)
     {
-        foreach (var user in userDatas)
-        {
-            var userPanel = AssetProvider.Instantiate("UserPanel", Vector3.zero, _scorePanel);
-            var userView = userPanel.GetComponent<UserPanelView>();
-            userView.Name.text = user.UserName;
-            userView.Score.text = user.Score.ToString();
-            Application.ExternalEval("alert('SpawnNewUser')");
-            if(user.UserPhotoLink != "") 
-                AllServices.Container.Single<DataController>().SetImageFromServer(user.UserPhotoLink, userView.Photo);
-        }
-        
-        
+        var dataController = AllServices.Container.Single<DataController>();
+        dataController.FillScorePanel(_scorePanel, data, "UserPanel");
     }
 
     private void ShareGameForFriends()

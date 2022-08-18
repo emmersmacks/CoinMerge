@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using CodeBase.Infrastructure.Services;
@@ -8,28 +9,33 @@ using UnityEngine.UI;
 
 public class NetworkController
 {
-    private const string ServerURL = "http://localhost:8888";
+    private const string ServerURL = "https://compassionate-mclean.31-31-196-202.plesk.page/api/Score";
     private const string RequestHeaderName = "Content-Type";
     private const string ContentType = "application/json";
     
     public IEnumerator SendUserScoreToServer(UserData dataToJson)
     {
         var json = JsonUtility.ToJson(dataToJson);
-        var request = new UnityWebRequest(ServerURL + "/Data", "POST");
+        var request = new UnityWebRequest(ServerURL, "POST");
         yield return SendRequest(json, request);
     }
 
-    public IEnumerator GetScoreListFromServer(UserData dataToJson)
+    public IEnumerator GetScoreListFromServer(UserData dataToJson, Action<List<UserData>> OnLoaded)
     {
+        Debug.Log("Send REQUEST");
         var json = JsonUtility.ToJson(dataToJson);
-        var request = new UnityWebRequest(ServerURL + "/Data", "GET");
+
+        var request = new UnityWebRequest(ServerURL, "GET");
         
         yield return SendRequest(json, request);
         
         var menuController = AllServices.Container.Single<MenuController>();
         var responseJson = request.downloadHandler.text;
+        
+        Debug.Log(responseJson);
+        
         var usersList = ParseJsonList(responseJson);
-        menuController.FillScorePanel(usersList);
+        OnLoaded(usersList);
     }
 
     private List<UserData> ParseJsonList(string responseJson)
@@ -50,10 +56,10 @@ public class NetworkController
 
     public IEnumerator SendRequest(string data, UnityWebRequest unityWebRequest)
     {
-        
         byte[] bodyRaw = Encoding.UTF8.GetBytes(data);
         unityWebRequest.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         unityWebRequest.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        
         unityWebRequest.SetRequestHeader(RequestHeaderName, ContentType);
         
         yield return unityWebRequest.SendWebRequest();

@@ -14,12 +14,15 @@ public class Runpoint : MonoBehaviour, ICoroutineRunner
     {
         Time.timeScale = 1;
 
-        _game = new Game(this);
-        _game.StateMachine.Enter<BootstrapState>();
-        DontDestroyOnLoad(this);
-        var data = AllServices.Container.Single<DataController>();
-
-        data.GetUsersScoreList();
+        if (AllServices.Container.Single<DataController>() == null)
+        {
+            _game = new Game(this);
+            _game.StateMachine.Enter<BootstrapState>();
+            DontDestroyOnLoad(this);
+            
+        }
+        
+        
 
     }
 

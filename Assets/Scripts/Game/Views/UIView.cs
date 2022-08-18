@@ -7,4 +7,8 @@ public class UIView : MonoBehaviour
     public GameObject PausePanel;
     public Button ResumeButton;
     public Button StopButton;
+    public Button ShowRecordsPanel;
+    public GameObject RecordsPanel;
+    public Button HideRecordsPanel;
+    public Transform UsersPanel;
 }

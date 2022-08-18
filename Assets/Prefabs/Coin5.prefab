@@ -16,16 +16,40 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3075751426924574800, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_Size.x
+      value: 3.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574800, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_Size.y
+      value: 3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574800, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d3a6b57f207674e40abb8a82be2d96db, type: 3}
+      objectReference: {fileID: 21300000, guid: 0404e2349cc67c14bb477f85c84ade95, type: 3}
     - target: {fileID: 3075751426924574800, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3075751426924574801, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.29584414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574801, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.29584414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574801, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8401039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574801, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.007
+      objectReference: {fileID: 0}
+    - target: {fileID: 3075751426924574801, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.037
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3075751427131266750, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
       propertyPath: m_RootOrder

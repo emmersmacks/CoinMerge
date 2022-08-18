@@ -1,13 +1,13 @@
 ﻿using CodeBase.Infrastructure.Services;
 using Infrastructure.AssetManagment;
 using Infrastructure.Services;
+using UnityEngine.SceneManagement;
 
 namespace CoinMerge.States
 {
     internal class EndGameController : IService
     {
         private readonly StateMachine _stateMachine;
-
         public EndGameController(StateMachine stateMachine)
         {
             _stateMachine = stateMachine;

@@ -15,16 +15,26 @@ namespace CoinMerge.States
             _stateMachine = stateMachine;
             _allServices = allServices;
             _sceneLoader = sceneLoader;
+            RegisterServices();
+
         }
         
         public void Enter()
         {
-            RegisterServices();
             if (SceneManager.GetActiveScene().name != "Menu")
             {
-                _sceneLoader.Load("Menu", delegate {  });
+                _sceneLoader.Load("Menu", OnLoadMenu);
             }
+            else
+            {
+                AllServices.Container.Single<MenuController>().LoadMenu();
+            }
+            
+        }
 
+        private void OnLoadMenu()
+        {
+            AllServices.Container.Single<MenuController>().LoadMenu();
         }
 
         public void Exit()
