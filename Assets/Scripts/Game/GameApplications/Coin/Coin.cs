@@ -12,6 +12,7 @@ public class Coin : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        CoinController.gameObject.SetActive(true);
+        if(col.collider.gameObject.tag != "Wall")
+            CoinController.gameObject.SetActive(true);
     }
 }

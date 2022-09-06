@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using CodeBase.Infrastructure.Services;
+
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class NetworkController
 {
-    private const string ServerURL = "https://compassionate-mclean.31-31-196-202.plesk.page/api/Score";
+    private const string ServerURL = "https://CoinMerge.somee.com/api/Score";
+    private const string ServerURLGet = "https://CoinMerge.somee.com/api/GetScore";
+    private const string ServerURLGetImage = "https://CoinMerge.somee.com/api/GetImage";
     private const string RequestHeaderName = "Content-Type";
     private const string ContentType = "application/json";
     
@@ -24,18 +27,21 @@ public class NetworkController
     {
         Debug.Log("Send REQUEST");
         var json = JsonUtility.ToJson(dataToJson);
+        Debug.Log(json);
 
-        var request = new UnityWebRequest(ServerURL, "GET");
-        
+        var request = new UnityWebRequest(ServerURLGet, "POST");
         yield return SendRequest(json, request);
-        
-        var menuController = AllServices.Container.Single<MenuController>();
+
         var responseJson = request.downloadHandler.text;
-        
+        Debug.Log("RESPONSE!!! ________________");
+
         Debug.Log(responseJson);
-        
+        Debug.Log(request.error);
         var usersList = ParseJsonList(responseJson);
         OnLoaded(usersList);
+        //yield return request; //SendRequest(json, request);
+
+
     }
 
     private List<UserData> ParseJsonList(string responseJson)
@@ -59,20 +65,27 @@ public class NetworkController
         byte[] bodyRaw = Encoding.UTF8.GetBytes(data);
         unityWebRequest.uploadHandler = (UploadHandler) new UploadHandlerRaw(bodyRaw);
         unityWebRequest.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
-        
         unityWebRequest.SetRequestHeader(RequestHeaderName, ContentType);
-        
+        unityWebRequest.chunkedTransfer = false;
         yield return unityWebRequest.SendWebRequest();
     }
     
     public IEnumerator DownloadImage(string MediaUrl, RawImage image)
-    {   
-        UnityWebRequest request = UnityWebRequestTexture.GetTexture(MediaUrl);
-        yield return request.SendWebRequest();
+    {
+        if (MediaUrl != "")
+        {
+            var request = UnityWebRequestTexture.GetTexture(ServerURLGetImage+string.Format("?link={0}", MediaUrl));
+
+            yield return request.SendWebRequest();
+            yield return new WaitForSeconds(1);
+
+            Debug.Log(request.result);
+            
+            if(request.isNetworkError || request.isHttpError) 
+                Debug.Log(request.error);
+            else
+                image.texture = ((DownloadHandlerTexture) request.downloadHandler).texture;
+        }
         
-        if(request.isNetworkError || request.isHttpError) 
-            Debug.Log(request.error);
-        else
-            image.texture = ((DownloadHandlerTexture) request.downloadHandler).texture;
     }
 }

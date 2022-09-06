@@ -200,10 +200,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0434\u0440\u0443\u0433\u0443"
+  m_text: Send to friends
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 312b6dd4dd9c051448f10ce13f7ac3c2, type: 2}
+  m_sharedMaterial: {fileID: 1161518165491360412, guid: 312b6dd4dd9c051448f10ce13f7ac3c2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -925,7 +925,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: b5b0b464f01b0ee46bc30af37961cfe4, type: 3}
+    m_Font: {fileID: 12800000, guid: 96fa85f95ef31db429a335e22081629d, type: 3}
     m_FontSize: 121
     m_FontStyle: 1
     m_BestFit: 0
@@ -1132,7 +1132,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 96fa85f95ef31db429a335e22081629d, type: 3}
     m_FontSize: 56
     m_FontStyle: 0
     m_BestFit: 0

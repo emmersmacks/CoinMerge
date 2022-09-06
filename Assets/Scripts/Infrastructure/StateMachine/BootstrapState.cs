@@ -25,8 +25,6 @@ namespace CoinMerge.States
 
         private void RegisterServices()
         {
-            _allServices.RegisterSingle<IAsset>(new AssetProvider());
-            _allServices.RegisterSingle<DataController>(new DataController(_runpoint));
         }
 
         public void Enter()

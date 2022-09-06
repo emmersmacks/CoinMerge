@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CodeBase.Infrastructure.Services;
+using CoinMerge.States;
 using Infrastructure.AssetManagment;
 using Infrastructure.Services;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class UIController : IService
         _uiView.StopButton.onClick.AddListener(StopGame);
         _uiView.ShowRecordsPanel.onClick.AddListener(ShowRecordsPanel);
         _uiView.HideRecordsPanel.onClick.AddListener(HideRecordsPanel);
+        _uiView.ExitButton.onClick.AddListener(AllServices.Container.Single<EndGameController>().StartEndGame);
         AllServices.Container.Single<DataController>().GetUsersScoreList(OnScoreLoaded);
 
     }

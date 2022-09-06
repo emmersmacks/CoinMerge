@@ -20,7 +20,7 @@ public class CoinSpawner : IService
     {
         _allCoinList = AssetProvider.GetObject<CoinList>(AssetPath.AllCoinPath);
         _startCoinsList = AssetProvider.GetObject<CoinList>(AssetPath.StartCoinPath);
-        var platform = AssetProvider.Instantiate(AssetPath.PlatformPath, new Vector3(0, 3));
+        var platform = AssetProvider.Instantiate(AssetPath.PlatformPath, new Vector3(0, 4));
         Platform = platform;
         platform.GetComponent<PlatformController>().CoinSpawner = this;
         _platformSprite = platform.GetComponent<PlatformView>().PlatformSprite;

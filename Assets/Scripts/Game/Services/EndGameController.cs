@@ -15,7 +15,7 @@ namespace CoinMerge.States
             deadLine.GetComponent<EndScript>().OnTriggered += StartEndGame;
         }
 
-        private void StartEndGame()
+        public void StartEndGame()
         {
             AllServices.Container.Single<DataController>().SendScoreToServer();
             _stateMachine.Enter<MenuState>();

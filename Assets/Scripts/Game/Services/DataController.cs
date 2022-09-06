@@ -16,10 +16,10 @@ public class DataController: IService
     private readonly Runpoint _runpoint;
     private readonly StateMachine _stateMachine;
     private NetworkController _networkController;
-    
-    private string _messageId = "AgAAAD1wAAAao5ZUgqt-Y5mDhVM";//test values
+
+    private string _messageId = "AgAAAAdVBQCdua4fwfnM48_FiHY";//test values
     private string _userId = "1419158298"; //test values
-    private string _chatId = "-1929436822581208416";//test values
+    private string _chatId = "7315150396215081840";//test values
     public int _score = 0;
     public List<UserData> ScoresData;
 
@@ -34,11 +34,13 @@ public class DataController: IService
 
     public void SetUserInfo(string userId)
     {
+        Debug.Log("data set:" + userId);
         _userId = userId;
     }
 
     public void SetMessageInfo(string messageId)
     {
+        Debug.Log("data set:" + messageId);
         _messageId = messageId;
     }
 
@@ -49,6 +51,7 @@ public class DataController: IService
 
     public void SetChatInfo(string chatId)
     {
+        Debug.Log("data set:" + chatId);
         _chatId = chatId;
     }
     
@@ -73,9 +76,14 @@ public class DataController: IService
             var userView = userPanel.GetComponent<UserPanelView>();
             userView.Iterator.text = count.ToString();
             userView.Name.text = user.UserName;
+            Debug.Log(user.Score);
             if (user.Score > 1000)
             {
-                userView.Score.text = (user.Score / 1000).ToString()+"k";
+                userView.Score.text = ((float)user.Score / 1000f).ToString()+"k";
+            }
+            else
+            {
+                userView.Score.text = user.Score.ToString();
             }
             if(user.UserPhotoLink != "") 
                 AllServices.Container.Single<DataController>().SetImageFromServer(user.UserPhotoLink, userView.Photo);
@@ -84,7 +92,7 @@ public class DataController: IService
 
     public async void GetUsersScoreList(Action<List<UserData>> onLoad)
     {
-        Debug.Log("AAA");
+        Debug.Log("StartScoreSet");
         var dataToJson = new UserData();
         dataToJson.UserId = long.Parse(_userId);
         dataToJson.ChatId = long.Parse(_chatId);
@@ -92,7 +100,7 @@ public class DataController: IService
         _runpoint.StartCoroutine(_networkController.GetScoreListFromServer(dataToJson, onLoad));
     }
 
-    public async void SetImageFromServer(string url, RawImage image)
+    public void SetImageFromServer(string url, RawImage image)
     {
         _runpoint.StartCoroutine(_networkController.DownloadImage(url, image));
     }

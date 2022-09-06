@@ -17,8 +17,8 @@ namespace CoinMerge.States
         {
             _allServices.RegisterSingle<CoinSpawner>(new CoinSpawner());
             _allServices.RegisterSingle<ScoreController>(new ScoreController(_allServices.Single<CoinSpawner>(), _allServices.Single<DataController>()));
-            _allServices.RegisterSingle<UIController>(new UIController(_allServices.Single<ScoreController>()));
             _allServices.RegisterSingle<EndGameController>(new EndGameController(_stateMachine));
+            _allServices.RegisterSingle<UIController>(new UIController(_allServices.Single<ScoreController>()));
         }
 
         public void Enter()

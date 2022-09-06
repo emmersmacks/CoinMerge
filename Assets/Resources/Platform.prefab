@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364880501951960127}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 1364880501769015512}
@@ -216,8 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballPrefab: {fileID: 3075751427131266751, guid: 450b9a21fb8eccf43b5a612b0587397d, type: 3}
-  MaxXMoveCoord: 2
-  MinXMoveCoord: -2
+  MaxXMoveCoord: 2.7
+  MinXMoveCoord: -2.7
 --- !u!114 &-5844814896836283387
 MonoBehaviour:
   m_ObjectHideFlags: 0
