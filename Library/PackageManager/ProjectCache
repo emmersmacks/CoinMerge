@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637960009328136702
-    m_Hash: 3566191900
+      ticks: 637992914555484094
+    m_Hash: 186702577
   m_LockFileStatus:
     m_FilePath: C:/GitUnity/CoinMerge/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637960009649588888
-    m_Hash: 2274178205
+      ticks: 637992914555494110
+    m_Hash: 3631236742
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -113,6 +113,7 @@ m_PackageAssets:
         - 5.2.1
         - 5.2.2
         - 5.2.3
+        - 5.2.4
         - 6.0.0-pre.1
         - 6.0.0-pre.2
         - 6.0.1
@@ -129,19 +130,24 @@ m_PackageAssets:
         - 7.0.4
         - 7.0.5
         - 7.0.6
+        - 7.0.7
+        - 7.0.8
         - 8.0.0-pre.3
         - 8.0.0-pre.4
         - 8.0.0
         - 8.0.1
         - 8.0.2
+        - 8.0.3
         - 9.0.0-pre.1
         - 9.0.0-pre.3
+        - 9.0.0
         compatible:
         - 5.2.0
         - 5.2.1
         - 5.2.2
         - 5.2.3
-        verified: 5.2.3
+        - 5.2.4
+        verified: 5.2.4
       dependencies:
       - name: com.unity.2d.common
         version: 4.2.0
@@ -240,6 +246,7 @@ m_PackageAssets:
         - 5.0.0-pre.2
         - 5.0.0
         - 5.0.1
+        - 5.0.2
         compatible:
         - 4.0.1
         verified: 4.0.1
@@ -332,6 +339,7 @@ m_PackageAssets:
         - 4.1.3
         - 4.2.0
         - 4.3.0
+        - 4.3.1
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.1
@@ -346,15 +354,20 @@ m_PackageAssets:
         - 6.0.2
         - 6.0.3
         - 6.0.4
+        - 6.0.5
+        - 6.0.6
         - 7.0.0-pre.3
         - 7.0.0-pre.4
         - 7.0.0
         - 7.0.1
+        - 7.0.2
         - 8.0.0-pre.1
         - 8.0.0-pre.3
+        - 8.0.0
         compatible:
         - 4.3.0
-        verified: 4.3.0
+        - 4.3.1
+        verified: 4.3.1
       dependencies:
       - name: com.unity.2d.common
         version: 4.2.0
@@ -548,10 +561,13 @@ m_PackageAssets:
         - 7.0.3
         - 7.0.4
         - 7.0.5
+        - 7.0.6
         - 8.0.0-pre.4
         - 8.0.0-pre.5
         - 8.0.0
+        - 8.0.1
         - 9.0.0-pre.1
+        - 9.0.0
         compatible:
         - 5.3.0
         verified: 5.3.0
@@ -3431,6 +3447,7 @@ m_PackageAssets:
         - 1.4.0
         - 1.4.1
         - 1.4.2
+        - 1.4.3
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3446,7 +3463,8 @@ m_PackageAssets:
         - 1.4.0
         - 1.4.1
         - 1.4.2
-        verified: 1.4.2
+        - 1.4.3
+        verified: 1.4.3
       dependencies:
       - name: com.unity.modules.unitywebrequest
         version: 1.0.0
@@ -3597,6 +3615,7 @@ m_PackageAssets:
         - 4.0.4
         - 4.1.0
         - 4.2.0
+        - 4.2.1
         - 5.0.0-pre.1
         - 5.0.0-pre.2
         - 5.0.0
@@ -3607,14 +3626,19 @@ m_PackageAssets:
         - 6.0.1
         - 6.0.2
         - 6.0.3
+        - 6.0.4
+        - 6.0.5
         - 7.0.0-pre.3
         - 7.0.0-pre.4
         - 7.0.0
+        - 7.0.1
         - 8.0.0-pre.1
         - 8.0.0-pre.2
+        - 8.0.0
         compatible:
         - 4.2.0
-        verified: 4.2.0
+        - 4.2.1
+        verified: 4.2.1
       dependencies:
       - name: com.unity.2d.sprite
         version: 1.0.0
